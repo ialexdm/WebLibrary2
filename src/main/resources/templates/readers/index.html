@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Readers</title>
+</head>
+<body>
+<a href="/">HOME PAGE</a>
+<hr/>
+<div th:each="reader : ${readers}">
+  <a th:href="@{/readers/{id}(id = ${reader.getId()})}"
+     th:text="${reader.getFullName()} + ', '+ ${reader.getAge()}"> </a>
+</div>
+<br/>
+<hr/>
+<a href="readers/new">Add new reader</a>
+</body>
+</html>
